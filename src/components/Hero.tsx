@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 interface HeroProps {
   title: string;
@@ -14,7 +13,6 @@ const Hero: React.FC<HeroProps> = ({
   title,
   subtitle,
   description,
-  // image = "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg",
   image = "src/assets/community.JPG",
   children,
   height = "lg",
@@ -42,26 +40,25 @@ const Hero: React.FC<HeroProps> = ({
       {/* Content */}
       <div className="relative h-full flex items-center justify-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
               {title}
             </h1>
+
             {subtitle && (
               <p className="text-xl md:text-2xl text-green-100 mb-6">
                 {subtitle}
               </p>
             )}
+
             {description && (
               <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
                 {description}
               </p>
             )}
+
             {children}
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
