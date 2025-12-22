@@ -13,7 +13,7 @@ const Login: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate login process
+
     setTimeout(() => {
       setIsLoading(false);
       alert("Login functionality would be implemented here");
@@ -44,7 +44,9 @@ const Login: React.FC = () => {
               <div className="bg-[#007A33] text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Lock className="h-8 w-8" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Welcome Back</h2>
+              <h2 className="text-2xl font-bold text-gray-900">
+                Welcome Back
+              </h2>
               <p className="text-gray-600 mt-2">
                 Sign in to your IALA member account
               </p>
@@ -52,17 +54,13 @@ const Login: React.FC = () => {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
+                <label className="block text-sm font-medium text-gray-700 mb-1">
                   Email Address
                 </label>
                 <div className="relative">
-                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
                   <input
                     type="email"
-                    id="email"
                     name="email"
                     required
                     value={formData.email}
@@ -74,17 +72,13 @@ const Login: React.FC = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
+                <label className="block text-sm font-medium text-gray-700 mb-1">
                   Password
                 </label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
                   <input
                     type={showPassword ? "text" : "password"}
-                    id="password"
                     name="password"
                     required
                     value={formData.password}
@@ -95,7 +89,7 @@ const Login: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
                   >
                     {showPassword ? (
                       <EyeOff className="h-5 w-5" />
@@ -115,15 +109,12 @@ const Login: React.FC = () => {
                   />
                   <label
                     htmlFor="remember"
-                    className="ml-2 block text-sm text-gray-700"
+                    className="ml-2 text-sm text-gray-700"
                   >
                     Remember me
                   </label>
                 </div>
-                <button
-                  type="button"
-                  className="text-sm text-[#007A33] hover:underline"
-                >
+                <button type="button" className="text-sm text-[#007A33]">
                   Forgot password?
                 </button>
               </div>
@@ -131,16 +122,10 @@ const Login: React.FC = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-[#007A33] text-white py-3 px-4 rounded-md font-semibold hover:bg-green-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                className="w-full bg-[#007A33] text-white py-3 px-4 rounded-md font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
               >
-                {isLoading ? (
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                ) : (
-                  <>
-                    <Lock className="h-5 w-5" />
-                    <span>Sign In</span>
-                  </>
-                )}
+                <Lock className="h-5 w-5" />
+                <span>{isLoading ? "Signing In..." : "Sign In"}</span>
               </button>
             </form>
 
@@ -149,7 +134,7 @@ const Login: React.FC = () => {
                 Not a member yet?{" "}
                 <a
                   href="/contact"
-                  className="text-[#007A33] hover:underline font-semibold"
+                  className="text-[#007A33] font-semibold"
                 >
                   Join IALA today
                 </a>
