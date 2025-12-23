@@ -41,42 +41,27 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link
-                  to="/about"
-                  className="text-gray-300 hover:text-[#007A33] transition-colors"
-                >
+                <Link to="/about" className="text-gray-300 hover:text-[#007A33]">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/events"
-                  className="text-gray-300 hover:text-[#007A33] transition-colors"
-                >
+                <Link to="/events" className="text-gray-300 hover:text-[#007A33]">
                   Events
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/news"
-                  className="text-gray-300 hover:text-[#007A33] transition-colors"
-                >
+                <Link to="/news" className="text-gray-300 hover:text-[#007A33]">
                   News
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/gallery"
-                  className="text-gray-300 hover:text-[#007A33] transition-colors"
-                >
+                <Link to="/gallery" className="text-gray-300 hover:text-[#007A33]">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/resources"
-                  className="text-gray-300 hover:text-[#007A33] transition-colors"
-                >
+                <Link to="/resources" className="text-gray-300 hover:text-[#007A33]">
                   Resources
                 </Link>
               </li>
@@ -110,29 +95,20 @@ const Footer: React.FC = () => {
               Follow Us
             </h3>
             <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-300 hover:text-[#007A33] transition-colors"
-              >
+              <a href="#" className="text-gray-300 hover:text-[#007A33]">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-[#007A33] transition-colors"
-              >
+              <a href="#" className="text-gray-300 hover:text-[#007A33]">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-[#007A33] transition-colors"
-              >
+              <a href="#" className="text-gray-300 hover:text-[#007A33]">
                 <Youtube className="h-6 w-6" />
               </a>
             </div>
             <div className="mt-6">
               <Link
                 to="/newsletter"
-                className="inline-block bg-[#007A33] text-white px-4 py-2 rounded-md font-medium hover:bg-green-700 transition-colors"
+                className="inline-block bg-[#007A33] text-white px-4 py-2 rounded-md font-medium hover:bg-green-700"
               >
                 Join Newsletter
               </Link>
