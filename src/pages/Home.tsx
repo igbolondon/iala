@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Calendar, Users, Heart, Award, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
@@ -29,16 +28,16 @@ const Home: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
           <Link
             to="/events"
-            className="bg-[#007A33] text-white px-8 py-3 rounded-md font-semibold hover:bg-green-700 transition-colors duration-200 text-center"
+            className="bg-green-500 border-2 border-green-500 text-white px-6 py-3 rounded-md font-semibold text-center hover:bg-green-600 hover:border-green-600 hover:scale-105"
           >
             Explore Events
           </Link>
           <Link
             to="/about"
-            className="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[#007A33] transition-all duration-200 text-center"
+            className="border-2 border-white text-white px-8 py-3 rounded-md font-semibold text-center hover:bg-gray-500 hover:scale-105"
           >
-            Learn More
-          </Link>
+                Learn More
+           </Link>
         </div>
       </Hero>
 
@@ -51,6 +50,7 @@ const Home: React.FC = () => {
             </h2>
             <div className="w-24 h-1 bg-[#007A33] mx-auto mb-6"></div>
           </div>
+
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
               The Igbo Association of London and Area (IALA) is dedicated to
@@ -59,6 +59,7 @@ const Home: React.FC = () => {
               members while contributing positively to the broader Canadian
               society.
             </p>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="bg-[#007A33] text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
@@ -72,6 +73,7 @@ const Home: React.FC = () => {
                   generations
                 </p>
               </div>
+
               <div className="text-center">
                 <div className="bg-[#007A33] text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Users className="h-8 w-8" />
@@ -84,6 +86,7 @@ const Home: React.FC = () => {
                   community
                 </p>
               </div>
+
               <div className="text-center">
                 <div className="bg-[#007A33] text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Award className="h-8 w-8" />
@@ -100,22 +103,15 @@ const Home: React.FC = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-[#007A33]">
+      <section className="py-16 bg-[#005724]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-white"
-              >
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-white">
                 <stat.icon className="h-12 w-12 mx-auto mb-4" />
                 <div className="text-3xl font-bold mb-2">{stat.value}</div>
                 <div className="text-green-100">{stat.label}</div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -131,28 +127,23 @@ const Home: React.FC = () => {
               </h2>
               <div className="w-24 h-1 bg-[#007A33]"></div>
             </div>
+
             <Link
               to="/events"
-              className="flex items-center space-x-1 text-[#007A33] hover:text-green-700 font-semibold transition-colors"
+              className="flex items-center space-x-1 text-[#007A33] font-semibold hover:text-green-700"
             >
               <span>View All Events</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {upcomingEvents.map((event, index) => (
-              <motion.div
+            {upcomingEvents.map((event) => (
+              <EventCard
                 key={event.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <EventCard
-                  event={event}
-                  onRSVP={(id) => console.log("RSVP for:", id)}
-                />
-              </motion.div>
+                event={event}
+                onRSVP={(id) => console.log("RSVP for:", id)}
+              />
             ))}
           </div>
         </div>
@@ -168,35 +159,30 @@ const Home: React.FC = () => {
               </h2>
               <div className="w-24 h-1 bg-[#007A33]"></div>
             </div>
+
             <Link
               to="/news"
-              className="flex items-center space-x-1 text-[#007A33] hover:text-green-700 font-semibold transition-colors"
+              className="flex items-center space-x-1 text-[#007A33] font-semibold hover:text-green-700"
             >
               <span>View All News</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {recentNews.map((post, index) => (
-              <motion.div
+            {recentNews.map((post) => (
+              <NewsCard
                 key={post.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <NewsCard
-                  post={post}
-                  onClick={(id) => console.log("View post:", id)}
-                />
-              </motion.div>
+                post={post}
+                onClick={(id) => console.log("View post:", id)}
+              />
             ))}
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-[#007A33] relative overflow-hidden">
+      <section className="py-16 bg-[#005724] relative overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
@@ -206,16 +192,17 @@ const Home: React.FC = () => {
             Become part of a vibrant community that celebrates Igbo culture
             while building a better future together
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="bg-white text-[#007A33] px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors duration-200"
+              className="bg-white text-[#007A33] px-8 py-3 rounded-md font-semibold hover:bg-gray-200 hover:scale-105"
             >
               Become a Member
             </Link>
             <Link
               to="/donate"
-              className="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-[#007A33] transition-all duration-200"
+              className="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-500 hover:scale-105"
             >
               Support Our Cause
             </Link>

@@ -15,7 +15,6 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real implementation, this would send the form data to a server
     console.log("Form submitted:", formData);
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 5000);
@@ -80,8 +79,12 @@ const Contact: React.FC = () => {
                     <MapPin className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Registered office Location</h3>
-                    <p className="text-gray-600">1476 Evans Blvd,London, Ontario, N6M 0A8, Canada</p>
+                    <h3 className="font-semibold text-gray-900">
+                      Registered Office Location
+                    </h3>
+                    <p className="text-gray-600">
+                      1476 Evans Blvd, London, Ontario, N6M 0A8, Canada
+                    </p>
                   </div>
                 </div>
 
@@ -99,7 +102,7 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Meeting Schedule */}
-              <div className="bg-green-50 p-6 rounded-lg">
+              <div className="bg-green-50 p-6 rounded-lg shadow-md">
                 <h3 className="font-bold text-[#007A33] mb-2">
                   Monthly Community Meetings
                 </h3>
@@ -107,7 +110,8 @@ const Contact: React.FC = () => {
                   Last Saturday of every month
                 </p>
                 <p className="text-gray-600 text-sm">
-                  Boyle Community Centre, 530 Charlotte street, London, ON 4:00 PM - 8:00 PM
+                  Boyle Community Centre, 530 Charlotte Street, London, ON
+                  4:00 PM – 8:00 PM
                 </p>
               </div>
             </div>
@@ -133,123 +137,81 @@ const Contact: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
                         Full Name *
                       </label>
                       <input
                         type="text"
-                        id="name"
                         name="name"
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#007A33] focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
                       />
                     </div>
 
                     <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
                         Email Address *
                       </label>
                       <input
                         type="email"
-                        id="email"
                         name="email"
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#007A33] focus:border-transparent"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#007A33] focus:border-transparent"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="inquiryType"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Inquiry Type
-                      </label>
-                      <select
-                        id="inquiryType"
-                        name="inquiryType"
-                        value={formData.inquiryType}
-                        onChange={handleChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#007A33] focus:border-transparent"
-                      >
-                        <option value="general">General Inquiry</option>
-                        <option value="membership">Membership</option>
-                        <option value="events">Events</option>
-                        <option value="volunteer">Volunteering</option>
-                        <option value="partnership">Partnership</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="subject"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Subject *
-                    </label>
                     <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      required
-                      value={formData.subject}
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#007A33] focus:border-transparent"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
                     />
+
+                    <select
+                      name="inquiryType"
+                      value={formData.inquiryType}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                    >
+                      <option value="general">General Inquiry</option>
+                      <option value="membership">Membership</option>
+                      <option value="events">Events</option>
+                      <option value="volunteer">Volunteering</option>
+                      <option value="partnership">Partnership</option>
+                    </select>
                   </div>
 
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={6}
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#007A33] focus:border-transparent resize-vertical"
-                      placeholder="Please provide details about your inquiry..."
-                    />
-                  </div>
+                  <input
+                    type="text"
+                    name="subject"
+                    required
+                    placeholder="Subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  />
+
+                  <textarea
+                    name="message"
+                    rows={6}
+                    required
+                    placeholder="Please provide details about your inquiry..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md resize-vertical"
+                  />
 
                   <button
                     type="submit"
-                    className="w-full bg-[#007A33] text-white py-3 px-6 rounded-md font-semibold hover:bg-green-700 transition-colors duration-200 flex items-center justify-center space-x-2"
+                    className="w-full bg-[#007A33] text-white py-3 px-6 rounded-md font-semibold flex items-center justify-center space-x-2 hover:scale-105"
                   >
                     <Send className="h-5 w-5" />
                     <span>Send Message</span>
@@ -259,22 +221,22 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Newsletter Signup */}
+          {/* Newsletter */}
           <div className="mt-16 bg-[#007A33] rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">
               Stay Connected
             </h2>
             <p className="text-green-100 mb-6">
               Subscribe to our newsletter for the latest community news and
-              event updates
+              updates
             </p>
             <div className="max-w-md mx-auto flex space-x-4">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-md focus:ring-2 focus:ring-green-300 focus:outline-none"
+                className="flex-1 px-4 py-2 rounded-md focus:ring-2 focus:ring-black focus:outline-none"
               />
-              <button className="bg-white text-[#007A33] px-6 py-2 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-[#007A33] px-6 py-2 rounded-md font-semibold hover:scale-105">
                 Subscribe
               </button>
             </div>

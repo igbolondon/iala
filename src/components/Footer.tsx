@@ -18,9 +18,9 @@ const Footer: React.FC = () => {
           {/* Organization Info */}
           <div>
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <Heart className="h-8 w-8 text-[#007A33] fill-current" />
+              <Heart className="h-8 w-8 text-green-600 fill-current" />
               <div className="flex flex-col">
-                <span className="font-bold text-[#007A33] text-lg leading-tight">
+                <span className="font-bold text-green-600 text-lg leading-tight">
                   IALA
                 </span>
                 <span className="text-xs text-gray-400 leading-tight">
@@ -36,47 +36,32 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#007A33]">
+            <h3 className="text-lg font-semibold mb-4 text-green-600">
               Quick Links
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link
-                  to="/about"
-                  className="text-gray-300 hover:text-[#007A33] transition-colors"
-                >
+                <Link to="/about" className="text-gray-300 hover:text-[#007A33]">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/events"
-                  className="text-gray-300 hover:text-[#007A33] transition-colors"
-                >
+                <Link to="/events" className="text-gray-300 hover:text-[#007A33]">
                   Events
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/news"
-                  className="text-gray-300 hover:text-[#007A33] transition-colors"
-                >
+                <Link to="/news" className="text-gray-300 hover:text-[#007A33]">
                   News
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/gallery"
-                  className="text-gray-300 hover:text-[#007A33] transition-colors"
-                >
+                <Link to="/gallery" className="text-gray-300 hover:text-[#007A33]">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/resources"
-                  className="text-gray-300 hover:text-[#007A33] transition-colors"
-                >
+                <Link to="/resources" className="text-gray-300 hover:text-[#007A33]">
                   Resources
                 </Link>
               </li>
@@ -85,7 +70,7 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#007A33]">
+            <h3 className="text-lg font-semibold mb-4 text-green-600">
               Contact Info
             </h3>
             <div className="space-y-3">
@@ -106,33 +91,24 @@ const Footer: React.FC = () => {
 
           {/* Social Media */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#007A33]">
+            <h3 className="text-lg font-semibold mb-4 text-green-600">
               Follow Us
             </h3>
             <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-300 hover:text-[#007A33] transition-colors"
-              >
+              <a href="#" target="_blank" className="text-gray-300 hover:text-[#007A33]">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-[#007A33] transition-colors"
-              >
+              <a href="#" target="_blank" className="text-gray-300 hover:text-[#007A33]">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-[#007A33] transition-colors"
-              >
+              <a href="https://www.youtube.com/@igboiala2069" target="_blank" className="text-gray-300 hover:text-[#007A33]">
                 <Youtube className="h-6 w-6" />
               </a>
             </div>
             <div className="mt-6">
               <Link
                 to="/newsletter"
-                className="inline-block bg-[#007A33] text-white px-4 py-2 rounded-md font-medium hover:bg-green-700 transition-colors"
+                className="inline-block bg-[#007A33] text-white px-4 py-2 rounded-md font-medium hover:bg-green-700 hover:scale-105"
               >
                 Join Newsletter
               </Link>

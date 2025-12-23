@@ -26,7 +26,6 @@ const Newsletter: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real implementation, this would integrate with Mailchimp or similar service
     console.log("Newsletter subscription:", { email, interests });
     setIsSubscribed(true);
   };
@@ -59,7 +58,7 @@ const Newsletter: React.FC = () => {
               </p>
               <a
                 href="/"
-                className="bg-[#007A33] text-white px-8 py-3 rounded-md font-semibold hover:bg-green-700 transition-colors inline-block"
+                className="bg-[#007A33] text-white px-8 py-3 rounded-md font-semibold inline-block"
               >
                 Return to Home
               </a>
@@ -135,7 +134,7 @@ const Newsletter: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-green-50 p-6 rounded-lg mt-8">
+              <div className="bg-green-50 p-6 rounded-lg mt-8 shadow-md text-center">
                 <h3 className="font-bold text-[#007A33] mb-2">
                   Newsletter Statistics
                 </h3>
@@ -214,7 +213,7 @@ const Newsletter: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#007A33] text-white py-3 px-6 rounded-md font-semibold hover:bg-green-700 transition-colors duration-200 flex items-center justify-center space-x-2"
+                  className="w-full bg-[#007A33] text-white py-3 px-6 rounded-md font-semibold flex items-center justify-center space-x-2"
                 >
                   <Mail className="h-5 w-5" />
                   <span>Subscribe to Newsletter</span>

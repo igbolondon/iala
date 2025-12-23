@@ -83,20 +83,20 @@ const Donate: React.FC = () => {
                 <div className="flex rounded-md overflow-hidden border border-gray-300">
                   <button
                     onClick={() => setDonationType("one-time")}
-                    className={`flex-1 py-3 px-4 font-medium transition-colors ${
+                    className={`flex-1 py-3 px-4 font-medium ${
                       donationType === "one-time"
                         ? "bg-[#007A33] text-white"
-                        : "bg-white text-gray-700 hover:bg-gray-50"
+                        : "bg-white text-gray-700"
                     }`}
                   >
                     One-Time
                   </button>
                   <button
                     onClick={() => setDonationType("monthly")}
-                    className={`flex-1 py-3 px-4 font-medium transition-colors border-l border-gray-300 ${
+                    className={`flex-1 py-3 px-4 font-medium border-l border-gray-300 ${
                       donationType === "monthly"
                         ? "bg-[#007A33] text-white"
-                        : "bg-white text-gray-700 hover:bg-gray-50"
+                        : "bg-white text-gray-700"
                     }`}
                   >
                     Monthly
@@ -114,10 +114,10 @@ const Donate: React.FC = () => {
                     <button
                       key={presetAmount}
                       onClick={() => setAmount(presetAmount)}
-                      className={`py-3 px-4 rounded-md font-semibold transition-colors ${
+                      className={`py-3 px-4 rounded-md font-semibold ${
                         amount === presetAmount
                           ? "bg-[#007A33] text-white"
-                          : "border border-gray-300 text-gray-700 hover:bg-gray-50"
+                          : "border border-gray-300 text-gray-700"
                       }`}
                     >
                       ${presetAmount}
@@ -128,10 +128,10 @@ const Donate: React.FC = () => {
                 <div className="flex items-center space-x-3">
                   <button
                     onClick={() => setAmount("custom")}
-                    className={`py-3 px-6 rounded-md font-semibold transition-colors ${
+                    className={`py-3 px-6 rounded-md font-semibold ${
                       amount === "custom"
                         ? "bg-[#007A33] text-white"
-                        : "border border-gray-300 text-gray-700 hover:bg-gray-50"
+                        : "border border-gray-300 text-gray-700"
                     }`}
                   >
                     Custom
@@ -139,7 +139,7 @@ const Donate: React.FC = () => {
                   {amount === "custom" && (
                     <div className="flex-1">
                       <div className="relative">
-                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
                           $
                         </span>
                         <input
@@ -172,7 +172,7 @@ const Donate: React.FC = () => {
 
               <button
                 onClick={handleDonate}
-                className="w-full bg-[#007A33] text-white py-4 px-6 rounded-md font-bold text-lg hover:bg-green-700 transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="w-full bg-[#007A33] text-white py-4 px-6 rounded-md font-bold text-lg flex items-center justify-center space-x-2"
               >
                 <CreditCard className="h-6 w-6" />
                 <span>
@@ -234,15 +234,11 @@ const Donate: React.FC = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Events Organized:</span>
-                    <span className="font-semibold text-gray-900">
-                      24 events
-                    </span>
+                    <span className="font-semibold text-gray-900">24 events</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Families Supported:</span>
-                    <span className="font-semibold text-gray-900">
-                      45 families
-                    </span>
+                    <span className="font-semibold text-gray-900">45 families</span>
                   </div>
                   <div className="flex justify-between border-t pt-3">
                     <span className="text-gray-600 font-semibold">

@@ -28,7 +28,6 @@ const Resources: React.FC = () => {
   };
 
   const handleDownload = (resource: Resource) => {
-    // In a real implementation, this would trigger the actual download
     alert(`Download would start for: ${resource.title}`);
   };
 
@@ -49,29 +48,30 @@ const Resources: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Search */}
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
                 <input
                   type="text"
                   placeholder="Search resources..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#007A33] focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md"
                 />
               </div>
 
               {/* Category Filter */}
               <div className="relative">
-                <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#007A33] focus:border-transparent appearance-none bg-white"
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md appearance-none bg-white"
                 >
                   {categories.map((category) => (
                     <option key={category} value={category}>
                       {category === "all"
                         ? "All Categories"
-                        : category.charAt(0).toUpperCase() + category.slice(1)}
+                        : category.charAt(0).toUpperCase() +
+                          category.slice(1)}
                     </option>
                   ))}
                 </select>
@@ -84,7 +84,7 @@ const Resources: React.FC = () => {
             {filteredResources.map((resource) => (
               <div
                 key={resource.id}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="bg-white rounded-lg shadow-md"
               >
                 <div className="p-6 flex items-center justify-between">
                   <div className="flex items-start space-x-4 flex-1">
@@ -124,7 +124,7 @@ const Resources: React.FC = () => {
                   </div>
                   <button
                     onClick={() => handleDownload(resource)}
-                    className="bg-[#007A33] text-white px-6 py-3 rounded-md font-medium hover:bg-green-700 transition-colors duration-200 flex items-center space-x-2"
+                    className="bg-[#007A33] text-white px-6 py-3 rounded-md font-medium flex items-center space-x-2 hover:scale-105"
                   >
                     <Download className="h-5 w-5" />
                     <span>Download</span>
@@ -162,7 +162,7 @@ const Resources: React.FC = () => {
               detailed meeting minutes, financial reports, and member
               directories.
             </p>
-            <button className="bg-[#007A33] text-white px-6 py-3 rounded-md font-semibold hover:bg-green-700 transition-colors">
+            <button className="bg-[#007A33] text-white px-6 py-3 rounded-md font-semibold hover:scale-105">
               Member Login
             </button>
           </div>

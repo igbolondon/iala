@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { Image, Video, Calendar, X } from "lucide-react";
 import Hero from "../components/Hero";
 import { mockGallery } from "../data/mockData";
@@ -34,7 +33,7 @@ const Gallery: React.FC = () => {
             />
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+              className="absolute top-4 right-4 bg-black bg-opacity-50 text-white p-2 rounded-full"
             >
               <X className="h-6 w-6" />
             </button>
@@ -73,31 +72,33 @@ const Gallery: React.FC = () => {
             <div className="bg-white rounded-lg shadow-md p-1 inline-flex">
               <button
                 onClick={() => setFilter("all")}
-                className={`px-6 py-2 rounded-md font-medium transition-colors ${
+                className={`px-6 py-2 rounded-md font-medium ${
                   filter === "all"
                     ? "bg-[#007A33] text-white"
-                    : "text-gray-700 hover:bg-gray-100"
+                    : "text-gray-700"
                 }`}
               >
                 All Media
               </button>
+
               <button
                 onClick={() => setFilter("image")}
-                className={`px-6 py-2 rounded-md font-medium transition-colors flex items-center space-x-2 ${
+                className={`px-6 py-2 rounded-md font-medium flex items-center space-x-2 ${
                   filter === "image"
                     ? "bg-[#007A33] text-white"
-                    : "text-gray-700 hover:bg-gray-100"
+                    : "text-gray-700"
                 }`}
               >
                 <Image className="h-4 w-4" />
                 <span>Photos</span>
               </button>
+
               <button
                 onClick={() => setFilter("video")}
-                className={`px-6 py-2 rounded-md font-medium transition-colors flex items-center space-x-2 ${
+                className={`px-6 py-2 rounded-md font-medium flex items-center space-x-2 ${
                   filter === "video"
                     ? "bg-[#007A33] text-white"
-                    : "text-gray-700 hover:bg-gray-100"
+                    : "text-gray-700"
                 }`}
               >
                 <Video className="h-4 w-4" />
@@ -108,47 +109,43 @@ const Gallery: React.FC = () => {
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredItems.map((item, index) => (
-              <motion.div
+            {filteredItems.map((item) => (
+              <div
                 key={item.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:scale-105 duration-100"
                 onClick={() => setSelectedItem(item)}
               >
                 <div className="relative aspect-square">
                   <img
                     src={item.url}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                    {item.type === "video" && (
-                      <Video className="h-12 w-12 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                    )}
-                  </div>
+                  {item.type === "video" && (
+                    <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                      <Video className="h-12 w-12 text-white" />
+                    </div>
+                  )}
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-gray-900 mb-1 group-hover:text-[#007A33] transition-colors">
+                  <h3 className="font-semibold text-gray-900 mb-1">
                     {item.title}
                   </h3>
                   <div className="flex items-center justify-between text-sm text-gray-600">
                     <span>{item.date.toLocaleDateString()}</span>
-                    <div className="flex items-center space-x-1">
-                      {item.type === "image" ? (
-                        <Image className="h-4 w-4" />
-                      ) : (
-                        <Video className="h-4 w-4" />
-                      )}
-                    </div>
+                    {item.type === "image" ? (
+                      <Image className="h-4 w-4" />
+                    ) : (
+                      <Video className="h-4 w-4" />
+                    )}
                   </div>
                   {item.event && (
-                    <p className="text-xs text-gray-500 mt-1">{item.event}</p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      {item.event}
+                    </p>
                   )}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 

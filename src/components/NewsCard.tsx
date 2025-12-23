@@ -18,7 +18,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ post, onClick }) => {
 
   return (
     <div
-      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer"
+      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:scale-105 duration-100"
       onClick={() => onClick?.(post.id)}
     >
       {post.image && (
@@ -43,7 +43,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ post, onClick }) => {
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-gray-900 mb-2 hover:text-[#007A33] transition-colors">
+        <h3 className="text-xl font-bold text-gray-900 mb-2 text-[#007A33]">
           {post.title}
         </h3>
         <p className="text-gray-600 mb-4 leading-relaxed">{post.excerpt}</p>
@@ -53,7 +53,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ post, onClick }) => {
             <User className="h-4 w-4" />
             <span className="text-sm">By {post.author}</span>
           </div>
-          <div className="flex items-center space-x-1 text-[#007A33] hover:text-green-700 transition-colors">
+          <div className="flex items-center space-x-1 text-[#007A33] cursor-pointer">
             <span className="text-sm font-medium">Read more</span>
             <ArrowRight className="h-4 w-4" />
           </div>
