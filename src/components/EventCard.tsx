@@ -17,7 +17,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, onRSVP }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg">
       {event.image && (
         <img
           src={event.image}
@@ -68,11 +68,11 @@ const EventCard: React.FC<EventCardProps> = ({ event, onRSVP }) => {
         <div className="flex space-x-3">
           <button
             onClick={() => onRSVP?.(event.id)}
-            className="flex-1 bg-[#007A33] text-white px-4 py-2 rounded-md font-medium hover:bg-green-700 transition-colors duration-200"
+            className="flex-1 bg-[#007A33] text-white px-4 py-2 rounded-md font-medium hover:bg-green-700"
           >
             RSVP
           </button>
-          <button className="flex-1 border border-gray-300 text-gray-700 px-4 py-2 rounded-md font-medium hover:bg-gray-50 transition-colors duration-200">
+          <button className="flex-1 border border-gray-300 text-gray-700 px-4 py-2 rounded-md font-medium hover:bg-gray-50">
             Learn More
           </button>
         </div>
