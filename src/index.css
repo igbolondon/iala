@@ -376,15 +376,15 @@
 }
 
 /* Default Selection Colors */
-::selection {
-  background: auto;
+/* ::selection {
+  background-color: rgba(0, 122, 51, 0.2);
   color: inherit;
 }
 
 ::-moz-selection {
-  background: auto;
+  background-color: auto;
   color: inherit;
-}
+} */
 
 /* Enhanced Focus Indicators for Better Accessibility */
 .focus-visible:focus {
