@@ -134,7 +134,7 @@ const Newsletter: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-green-50 p-6 rounded-lg mt-8">
+              <div className="bg-green-50 p-6 rounded-lg mt-8 shadow-md text-center">
                 <h3 className="font-bold text-[#007A33] mb-2">
                   Newsletter Statistics
                 </h3>
