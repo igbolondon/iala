@@ -41,7 +41,7 @@ const Navigation: React.FC = () => {
               <Link
                 key={path}
                 to={path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                className={`px-3 py-2 rounded-md text-sm font-medium ${
                   isActive(path)
                     ? "text-[#007A33] bg-green-50 border-b-2 border-[#007A33]"
                     : "text-gray-700 hover:text-[#007A33] hover:bg-green-50"
@@ -52,13 +52,13 @@ const Navigation: React.FC = () => {
             ))}
             <Link
               to="/donate"
-              className="bg-[#007A33] text-white px-4 py-2 rounded-md font-medium hover:bg-green-700 transition-colors duration-200"
+              className="bg-[#007A33] text-white px-4 py-2 rounded-md font-medium hover:bg-green-700"
             >
               Donate
             </Link>
             <Link
               to="/login"
-              className="border border-[#007A33] text-[#007A33] px-4 py-2 rounded-md font-medium hover:bg-[#007A33] hover:text-white transition-colors duration-200"
+              className="border border-[#007A33] text-[#007A33] px-4 py-2 rounded-md font-medium hover:bg-[#007A33] hover:text-white"
             >
               Login
             </Link>
@@ -67,13 +67,9 @@ const Navigation: React.FC = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-400 hover:text-[#007A33] hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-md text-gray-400 hover:text-[#007A33] hover:bg-gray-100"
           >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
@@ -86,7 +82,7 @@ const Navigation: React.FC = () => {
                   key={path}
                   to={path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  className={`block px-3 py-2 rounded-md text-base font-medium ${
                     isActive(path)
                       ? "text-[#007A33] bg-green-50"
                       : "text-gray-700 hover:text-[#007A33] hover:bg-green-50"
@@ -98,14 +94,14 @@ const Navigation: React.FC = () => {
               <Link
                 to="/donate"
                 onClick={() => setIsMenuOpen(false)}
-                className="block bg-[#007A33] text-white px-3 py-2 rounded-md font-medium hover:bg-green-700 transition-colors duration-200 mt-4"
+                className="block bg-[#007A33] text-white px-3 py-2 rounded-md font-medium hover:bg-green-700 mt-4"
               >
                 Donate
               </Link>
               <Link
                 to="/login"
                 onClick={() => setIsMenuOpen(false)}
-                className="block border border-[#007A33] text-[#007A33] px-3 py-2 rounded-md font-medium hover:bg-[#007A33] hover:text-white transition-colors duration-200 mt-2 text-center"
+                className="block border border-[#007A33] text-[#007A33] px-3 py-2 rounded-md font-medium hover:bg-[#007A33] hover:text-white mt-2 text-center"
               >
                 Login
               </Link>
