@@ -18,7 +18,9 @@ const NewsCard: React.FC<NewsCardProps> = ({ post, onClick }) => {
 
   return (
     <div
-      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:scale-105 duration-100"
+      className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:scale-105 duration-100 ${
+    post.link ? 'cursor-pointer' : 'cursor-default'
+  }`}
       onClick={() => onClick?.(post.id)}
     >
       {post.image && (

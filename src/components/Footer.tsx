@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <MapPin className="h-4 w-4" />
-                <span>London, Ontario, Canada</span>
+                <span><a href="https://maps.app.goo.gl/9fjNzsCTVV1sk7xR8" target="_blank">1476 Evans Blvd, London Ontario</a></span>
               </div>
             </div>
           </div>

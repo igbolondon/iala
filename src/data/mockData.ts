@@ -116,6 +116,7 @@ export const mockNews: NewsPost[] = [
     author: "Chief Ikechukwu Eze",
     image: "src/assets/TempTexture.png",
     category: "cultural",
+    link: "https://www.youtube.com/watch?v=GbmhBK0WaRs",
   },
   {
     id: "4",

@@ -17,6 +17,12 @@ const Home: React.FC = () => {
   const upcomingEvents = mockEvents.slice(0, 3);
   const recentNews = mockNews.slice(0, 3);
 
+  const goToLink = (link: string | undefined) => {
+    if (link) {
+       window.open(link, '_blank');
+    }
+  };
+
   return (
     <div>
       <Hero
@@ -174,7 +180,7 @@ const Home: React.FC = () => {
               <NewsCard
                 key={post.id}
                 post={post}
-                onClick={(id) => console.log("View post:", id)}
+                onClick={() => goToLink(post.link)}
               />
             ))}
           </div>

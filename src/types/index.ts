@@ -9,6 +9,7 @@ export interface Event {
   attendees: number;
   maxAttendees?: number;
   category: "cultural" | "social" | "educational" | "fundraising";
+  link?: string;
 }
 
 export interface NewsPost {
@@ -20,6 +21,7 @@ export interface NewsPost {
   author: string;
   image?: string;
   category: "announcement" | "community" | "cultural" | "event";
+  link?: string;
 }
 
 export interface GalleryItem {
@@ -30,6 +32,7 @@ export interface GalleryItem {
   thumbnail?: string;
   date: Date;
   event?: string;
+  link?: string;
 }
 
 export interface Resource {
