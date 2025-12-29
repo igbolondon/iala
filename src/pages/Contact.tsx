@@ -15,8 +15,16 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const subject = `${formData.subject}`;
+    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AInquiry: ${formData.inquiryType}%0D%0AMessage: ${formData.message}`;
+    
+    window.location.href = `mailto:igbolondon.canada@gmail.com?subject=${subject}&body=${body}`;
+
     console.log("Form submitted:", formData);
+
     setIsSubmitted(true);
+
     setTimeout(() => setIsSubmitted(false), 5000);
   };
 
@@ -59,6 +67,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-gray-900">Email</h3>
                     <p className="text-gray-600">president@igbolondon.ca</p>
+                    <p className="text-gray-600">igbolondon.canada@gmail.com</p>
                   </div>
                 </div>
 
