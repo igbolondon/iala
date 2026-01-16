@@ -95,19 +95,19 @@ const Footer: React.FC = () => {
               Follow Us
             </h3>
             <div className="flex space-x-4">
-              <a href="#" target="_blank" className="text-gray-300 hover:text-[#007A33]">
+              <a href="https://www.facebook.com/groups/880616603488150" target="_blank" className="text-gray-300 hover:text-[#007A33]">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" target="_blank" className="text-gray-300 hover:text-[#007A33]">
+              {/* <a href="#" target="_blank" className="text-gray-300 hover:text-[#007A33]">
                 <Instagram className="h-6 w-6" />
-              </a>
+              </a> */}
               <a href="https://www.youtube.com/@igboiala2069" target="_blank" className="text-gray-300 hover:text-[#007A33]">
                 <Youtube className="h-6 w-6" />
               </a>
             </div>
             <div className="mt-6">
               <Link
-                to="/newsletter"
+                to="/newslettersoon"
                 className="inline-block bg-[#007A33] text-white px-4 py-2 rounded-md font-medium hover:bg-green-700 hover:scale-105"
               >
                 Join Newsletter

@@ -65,7 +65,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, onRSVP }) => {
           </div>
         </div>
 
-        <div className="flex space-x-3">
+        {/* <div className="flex space-x-3">
           <button
             onClick={() => onRSVP?.(event.id)}
             className="flex-1 bg-[#007A33] text-white px-4 py-2 rounded-md font-medium hover:bg-green-700 hover:scale-105"
@@ -75,7 +75,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, onRSVP }) => {
           <button className="flex-1 border border-gray-300 text-gray-700 px-4 py-2 rounded-md font-medium hover:bg-gray-50 hover:scale-105">
             Learn More
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

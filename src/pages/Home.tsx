@@ -207,7 +207,7 @@ const Home: React.FC = () => {
               Become a Member
             </Link>
             <Link
-              to="/donate"
+              to="/donatesoon"
               className="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-500 hover:scale-105"
             >
               Support Our Cause

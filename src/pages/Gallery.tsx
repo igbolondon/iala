@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Image, Video, Calendar, X } from "lucide-react";
+import { Image, Video, Calendar, X, ExternalLink } from "lucide-react";
 import Hero from "../components/Hero";
 import { mockGallery } from "../data/mockData";
 import type { GalleryItem } from "../types";
@@ -11,6 +11,17 @@ const Gallery: React.FC = () => {
   const filteredItems = mockGallery.filter(
     (item) => filter === "all" || item.type === filter
   );
+
+  // Logic to handle clicking an item
+  const handleItemClick = (item: GalleryItem) => {
+    if (item.type === "video" && item.videoUrl) {
+      // Opens the YouTube link in a new tab
+      window.open(item.videoUrl, "_blank", "noopener,noreferrer");
+    } else {
+      // Opens the modal for images
+      setSelectedItem(item);
+    }
+  };
 
   const Modal: React.FC<{ item: GalleryItem; onClose: () => void }> = ({
     item,
@@ -33,7 +44,7 @@ const Gallery: React.FC = () => {
             />
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 bg-black bg-opacity-50 text-white p-2 rounded-full"
+              className="absolute top-4 right-4 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
             >
               <X className="h-6 w-6" />
             </button>
@@ -61,7 +72,7 @@ const Gallery: React.FC = () => {
         title="Community Gallery"
         subtitle="Moments That Define Us"
         description="Explore photos and videos capturing the spirit of our community events and cultural celebrations"
-        image="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+        image="src/assets/3W8A0695.JPG"
         height="md"
       />
 
@@ -70,40 +81,23 @@ const Gallery: React.FC = () => {
           {/* Filter Buttons */}
           <div className="flex justify-center mb-8">
             <div className="bg-white rounded-lg shadow-md p-1 inline-flex">
-              <button
-                onClick={() => setFilter("all")}
-                className={`px-6 py-2 rounded-md font-medium ${
-                  filter === "all"
-                    ? "bg-[#007A33] text-white"
-                    : "text-gray-700"
-                }`}
-              >
-                All Media
-              </button>
-
-              <button
-                onClick={() => setFilter("image")}
-                className={`px-6 py-2 rounded-md font-medium flex items-center space-x-2 ${
-                  filter === "image"
-                    ? "bg-[#007A33] text-white"
-                    : "text-gray-700"
-                }`}
-              >
-                <Image className="h-4 w-4" />
-                <span>Photos</span>
-              </button>
-
-              <button
-                onClick={() => setFilter("video")}
-                className={`px-6 py-2 rounded-md font-medium flex items-center space-x-2 ${
-                  filter === "video"
-                    ? "bg-[#007A33] text-white"
-                    : "text-gray-700"
-                }`}
-              >
-                <Video className="h-4 w-4" />
-                <span>Videos</span>
-              </button>
+              {(["all", "image", "video"] as const).map((type) => (
+                <button
+                  key={type}
+                  onClick={() => setFilter(type)}
+                  className={`px-6 py-2 rounded-md font-medium flex items-center space-x-2 transition-colors ${
+                    filter === type
+                      ? "bg-[#007A33] text-white"
+                      : "text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  {type === "image" && <Image className="h-4 w-4" />}
+                  {type === "video" && <Video className="h-4 w-4" />}
+                  <span className="capitalize">
+                    {type === "all" ? "All Media" : type === "image" ? "Photos" : "Videos"}
+                  </span>
+                </button>
+              ))}
             </div>
           </div>
 
@@ -112,8 +106,9 @@ const Gallery: React.FC = () => {
             {filteredItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:scale-105 duration-100"
-                onClick={() => setSelectedItem(item)}
+                role="button"
+                className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                onClick={() => handleItemClick(item)}
               >
                 <div className="relative aspect-square">
                   <img
@@ -122,8 +117,11 @@ const Gallery: React.FC = () => {
                     className="w-full h-full object-cover"
                   />
                   {item.type === "video" && (
-                    <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-                      <Video className="h-12 w-12 text-white" />
+                    <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 flex flex-col items-center justify-center transition-all">
+                      <Video className="h-12 w-12 text-white mb-2" />
+                      <span className="text-white text-xs font-medium bg-black bg-opacity-50 px-2 py-1 rounded flex items-center gap-1">
+                        Watch Video <ExternalLink className="h-3 w-3" />
+                      </span>
                     </div>
                   )}
                 </div>
@@ -139,11 +137,6 @@ const Gallery: React.FC = () => {
                       <Video className="h-4 w-4" />
                     )}
                   </div>
-                  {item.event && (
-                    <p className="text-xs text-gray-500 mt-1">
-                      {item.event}
-                    </p>
-                  )}
                 </div>
               </div>
             ))}
@@ -155,15 +148,12 @@ const Gallery: React.FC = () => {
               <h3 className="text-xl font-semibold text-gray-600 mb-2">
                 No media found
               </h3>
-              <p className="text-gray-500">
-                Check back soon for more photos and videos
-              </p>
             </div>
           )}
         </div>
       </section>
 
-      {/* Modal */}
+      {/* Modal only opens for Images now */}
       {selectedItem && (
         <Modal item={selectedItem} onClose={() => setSelectedItem(null)} />
       )}

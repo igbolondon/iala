@@ -15,8 +15,16 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const subject = `${formData.subject}`;
+    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AInquiry: ${formData.inquiryType}%0D%0AMessage: ${formData.message}`;
+    
+    window.location.href = `mailto:igbolondon.canada@gmail.com?subject=${subject}&body=${body}`;
+
     console.log("Form submitted:", formData);
+
     setIsSubmitted(true);
+
     setTimeout(() => setIsSubmitted(false), 5000);
   };
 
@@ -37,7 +45,7 @@ const Contact: React.FC = () => {
         title="Contact Us"
         subtitle="Get in Touch"
         description="Reach out to us for membership inquiries, event information, or any questions about our community"
-        image="https://images.pexels.com/photos/3184340/pexels-photo-3184340.jpeg"
+        image="src/assets/Ken-26.jpeg"
         height="md"
       />
 
@@ -59,6 +67,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-gray-900">Email</h3>
                     <p className="text-gray-600">president@igbolondon.ca</p>
+                    <p className="text-gray-600">igbolondon.canada@gmail.com</p>
                   </div>
                 </div>
 
@@ -69,7 +78,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-gray-900">Phone</h3>
                     <p className="text-gray-600">
-                      (226) 456-1607 or (226) 504-1598
+                      (226) 456-1604 or (226) 504-1598
                     </p>
                   </div>
                 </div>
@@ -222,7 +231,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Newsletter */}
-          <div className="mt-16 bg-[#007A33] rounded-lg p-8 text-center">
+          {/* <div className="mt-16 bg-[#007A33] rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">
               Stay Connected
             </h2>
@@ -240,7 +249,7 @@ const Contact: React.FC = () => {
                 Subscribe
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>
