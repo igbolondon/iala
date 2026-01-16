@@ -34,49 +34,49 @@ const About: React.FC = () => {
     {
       name: "Mr. Kenneth Emetuche",
       position: "President",
-      image: "src/assets/Kenneth.jpg",
+      image: "/Kenneth.jpg",
       alt: "IALA president",
       bio: "Background in Banking and Finance but developed great passion for community advocacy with 15+ years of service.",
     },
     {
       name: "Mr. Nwakanma Ninduwezuor Ehiobu a.k.a Wakie",
       position: "Vice President",
-      image: "src/assets/wakie1.jpeg",
+      image: "/wakie1.jpeg",
       alt: "VP",
       bio: "One of the pioneer members of the Ibo Association in London and Area, passionate about preserving Igbo culture while building a strong community.",
     },
     {
       name: "Kingsley Anukam",
       position: "Research & Proposal Development Director / Financial Secretary",
-      image: "src/assets/KAnukam.jpg",
+      image: "/KAnukam.jpg",
       alt: "RPD",
       bio: "Image maker of IALA and grant writer for the Igbo Association.",
     },
     {
       name: "Mr. Ikechukwu Ugwuede",
       position: "Secretary",
-      image: "src/assets/Ikechukwu.jpg",
+      image: "/Ikechukwu.jpg",
       alt: "Secretary",
       bio: "Holds a B.Sc. in Biochemistry from Memorial University and is passionate about youth and community relations.",
     },
     {
       name: "Ngozi Kanu",
       position: "Treasurer",
-      image: "src/assets/Ngozi-kanu.jpg",
+      image: "/Ngozi-kanu.jpg",
       alt: "Treasurer",
       bio: "Project management professional with vast experience in community relations.",
     },
     {
       name: "Mr. Raymond Okeke",
       position: "Public Relations Officer",
-      image: "src/assets/Raymond.jpg",
+      image: "/Raymond.jpg",
       alt: "PRO",
       bio: "Registered Practical Nurse and transportation business owner passionate about community integration.",
     },
     {
       name: "Mr. Uche Nwankwo",
       position: "Social Events & Entertainment Officer",
-      image: "src/assets/Uche-Nwankwo.jpg",
+      image: "/Uche-Nwankwo.jpg",
       alt: "Social Director",
       bio: "Registered Practical Nurse with strong passion for community engagement.",
     },
@@ -88,7 +88,7 @@ const About: React.FC = () => {
         title="About IALA"
         subtitle="Our Story, Mission & Vision"
         description="Learn about our history, leadership, and commitment to building a vibrant Igbo community in London, Ontario"
-        image="src/assets/Ken-29.jpeg"
+        image="/Ken-29.jpeg"
         height="md"
       />
 
@@ -112,7 +112,7 @@ const About: React.FC = () => {
             </p>
           </div>
           <img
-            src="src/assets/bannerdesign.png"
+            src="/bannerdesign.png"
             alt="IALA Gathering"
             className="rounded-lg shadow-lg w-full h-64 object-cover hover:scale-105 duration-100   "
           />

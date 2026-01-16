@@ -13,7 +13,7 @@ const Hero: React.FC<HeroProps> = ({
   title,
   subtitle,
   description,
-  image = "src/assets/community.JPG",
+  image = "/community.JPG",
   children,
   height = "lg",
 }) => {

@@ -41,7 +41,7 @@ const Resources: React.FC = () => {
         title="Resources & Downloads"
         subtitle="Important Documents & Information"
         description="Access bylaws, meeting minutes, forms, newsletters, and other essential community resources"
-        image="src/assets/3men.jpg"
+        image="/3men.jpg"
         height="md"
       />
 

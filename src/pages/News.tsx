@@ -32,7 +32,7 @@ const News: React.FC = () => {
         title="News & Updates"
         subtitle="Stay Connected with Our Community"
         description="Latest news, announcements, and stories from the Igbo Association of London and Area"
-        image="src/assets/Ken-4.jpeg"
+        image="/Ken-4.jpeg"
         height="md"
       />
 

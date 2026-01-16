@@ -46,7 +46,7 @@ const Events: React.FC = () => {
         title="Community Events"
         subtitle="Join Us in Celebrating Our Culture"
         description="Discover upcoming events, cultural festivals, educational workshops, and community gatherings"
-        image="src/assets/3W8A0764.JPG"
+        image="/3W8A0764.JPG"
         height="md"
       />
 
