@@ -6,8 +6,8 @@ import {
   Phone,
   MapPin,
   Facebook,
-  Instagram,
   Youtube,
+  // Instagram,
 } from "lucide-react";
 
 const Footer: React.FC = () => {

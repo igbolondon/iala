@@ -27,11 +27,11 @@ const Resources: React.FC = () => {
     newsletters: "bg-orange-100 text-orange-800",
   };
 
-  const handleDownload = (resource: Resource) => {
-    alert(`Download would start for: ${resource.title}`);
-  };
+  // const handleDownload = (resource: Resource) => {
+  //   alert(`Download would start for: ${resource.title}`);
+  // };
 
-  const handleOpen = (resource: Resource) => {
+  const handleOpen = () => {
     window.open("https://docs.google.com/forms/d/1MtRIGWZjsU5hUzB1sWsw0ssM0o9vdIqmgsG3ErYrqlY/preview", "_blank")
   }
 
@@ -127,7 +127,7 @@ const Resources: React.FC = () => {
                     </div>
                   </div>
                   <button
-                    onClick={() => handleOpen(resource)}
+                    onClick={() => handleOpen()}
                     className="bg-[#007A33] text-white px-6 py-3 rounded-md font-medium flex items-center space-x-2 hover:scale-105"
                   >
                     <SquareArrowOutUpRight  className="h-5 w-5" />
