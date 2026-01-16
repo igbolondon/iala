@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FileText, Download, Search, Filter, Calendar } from "lucide-react";
+import { FileText, SquareArrowOutUpRight, Search, Filter, Calendar } from "lucide-react";
 import Hero from "../components/Hero";
 import { mockResources } from "../data/mockData";
 import type { Resource } from "../types";
@@ -31,13 +31,17 @@ const Resources: React.FC = () => {
     alert(`Download would start for: ${resource.title}`);
   };
 
+  const handleOpen = (resource: Resource) => {
+    window.open("https://docs.google.com/forms/d/1MtRIGWZjsU5hUzB1sWsw0ssM0o9vdIqmgsG3ErYrqlY/preview", "_blank")
+  }
+
   return (
     <div>
       <Hero
         title="Resources & Downloads"
         subtitle="Important Documents & Information"
         description="Access bylaws, meeting minutes, forms, newsletters, and other essential community resources"
-        image="https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg"
+        image="src/assets/3men.jpg"
         height="md"
       />
 
@@ -123,11 +127,11 @@ const Resources: React.FC = () => {
                     </div>
                   </div>
                   <button
-                    onClick={() => handleDownload(resource)}
+                    onClick={() => handleOpen(resource)}
                     className="bg-[#007A33] text-white px-6 py-3 rounded-md font-medium flex items-center space-x-2 hover:scale-105"
                   >
-                    <Download className="h-5 w-5" />
-                    <span>Download</span>
+                    <SquareArrowOutUpRight  className="h-5 w-5" />
+                    <span>Open</span>
                   </button>
                 </div>
               </div>
@@ -149,7 +153,7 @@ const Resources: React.FC = () => {
       </section>
 
       {/* Member Resources Notice */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white rounded-lg shadow-md p-8">
             <FileText className="h-16 w-16 text-[#007A33] mx-auto mb-4" />
@@ -167,7 +171,7 @@ const Resources: React.FC = () => {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Events: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [viewType, setViewType] = useState<"upcoming" | "past" | "all">(
-    "upcoming"
+    "all"
   );
 
   const categories = [

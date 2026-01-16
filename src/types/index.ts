@@ -29,6 +29,7 @@ export interface GalleryItem {
   title: string;
   type: "image" | "video";
   url: string;
+  videoUrl: string,
   thumbnail?: string;
   date: Date;
   event?: string;

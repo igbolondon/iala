@@ -9,8 +9,11 @@ import Gallery from "./pages/Gallery";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
+import LoginSoon from "./pages/LoginSoon";
 import Donate from "./pages/Donate";
+import DonateSoon from "./pages/DonateSoon";
 import Newsletter from "./pages/Newsletter";
+import NewsletterSoon from "./pages/NewsletterSoon";
 
 function App() {
   return (
@@ -27,8 +30,11 @@ function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/loginsoon" element={<LoginSoon />} />
             <Route path="/donate" element={<Donate />} />
+            <Route path="/donatesoon" element={<DonateSoon />} />
             <Route path="/newsletter" element={<Newsletter />} />
+            <Route path="/newslettersoon" element={<NewsletterSoon />} />
           </Routes>
         </main>
         <Footer />

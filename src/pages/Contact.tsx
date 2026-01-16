@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
         title="Contact Us"
         subtitle="Get in Touch"
         description="Reach out to us for membership inquiries, event information, or any questions about our community"
-        image="https://images.pexels.com/photos/3184340/pexels-photo-3184340.jpeg"
+        image="src/assets/Ken-26.jpeg"
         height="md"
       />
 
@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-gray-900">Phone</h3>
                     <p className="text-gray-600">
-                      (226) 456-1607 or (226) 504-1598
+                      (226) 456-1604 or (226) 504-1598
                     </p>
                   </div>
                 </div>
@@ -231,7 +231,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Newsletter */}
-          <div className="mt-16 bg-[#007A33] rounded-lg p-8 text-center">
+          {/* <div className="mt-16 bg-[#007A33] rounded-lg p-8 text-center">
             <h2 className="text-2xl font-bold text-white mb-4">
               Stay Connected
             </h2>
@@ -249,7 +249,7 @@ const Contact: React.FC = () => {
                 Subscribe
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

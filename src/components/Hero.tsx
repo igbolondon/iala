@@ -30,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({
     >
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
         style={{ backgroundImage: `url(${image})` }}
       />
 

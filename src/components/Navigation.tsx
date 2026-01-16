@@ -19,7 +19,7 @@ const Navigation: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-white/75 shadow-md sticky top-0 z-50 backdrop-blur-sm">
+    <nav className="bg-green-300/75 shadow-md sticky top-0 z-50 backdrop-blur-sm">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -56,13 +56,13 @@ const Navigation: React.FC = () => {
             {/* Right-aligned Donate/Login Buttons */}
             <div className="flex items-center space-x-4">
                 <Link
-                to="/donate"
+                to="/donatesoon"
                 className="bg-black border-2 border-black text-white px-4 py-2 rounded-md font-medium hover:bg-gray-700 hover:border-gray-700 hover:scale-105"
                 >
                 Donate
                 </Link>
                 <Link
-                to="/login"
+                to="/loginsoon"
                 className="bg-green-700 border-2 border-green-700 text-white px-4 py-2 rounded-md font-medium hover:bg-green-500 hover:text-white hover:border-green-500 hover:scale-105"
                 >
                 Login
@@ -98,14 +98,14 @@ const Navigation: React.FC = () => {
                 </Link>
               ))}
               <Link
-                to="/donate"
+                to="/donatesoon"
                 onClick={() => setIsMenuOpen(false)}
                 className="block bg-[#007A33] text-white px-3 py-2 rounded-md font-medium hover:bg-green-700 mt-4"
               >
                 Donate
               </Link>
               <Link
-                to="/login"
+                to="/loginsoon"
                 onClick={() => setIsMenuOpen(false)}
                 className="block border border-[#007A33] text-[#007A33] px-3 py-2 rounded-md font-medium hover:bg-[#007A33] hover:text-white mt-2 text-center"
               >

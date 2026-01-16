@@ -88,7 +88,7 @@ const About: React.FC = () => {
         title="About IALA"
         subtitle="Our Story, Mission & Vision"
         description="Learn about our history, leadership, and commitment to building a vibrant Igbo community in London, Ontario"
-        image="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg"
+        image="src/assets/Ken-29.jpeg"
         height="md"
       />
 

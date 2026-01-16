@@ -62,7 +62,7 @@ const Donate: React.FC = () => {
         title="Support Our Community"
         subtitle="Make a Difference Today"
         description="Your generous donations help us preserve culture, support education, and strengthen our community bonds"
-        image="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg"
+        image="src/assets/Ken-18.jpeg"
         height="md"
       />
 
@@ -182,7 +182,7 @@ const Donate: React.FC = () => {
               </button>
 
               <p className="text-xs text-gray-600 text-center mt-4">
-                IALA is a registered Canadian charity. Tax receipts will be
+                IALA is a registered Canadian Non-Profit Organization. Tax receipts will be
                 issued for donations over $20.
               </p>
             </div>
@@ -229,22 +229,22 @@ const Donate: React.FC = () => {
                   <div className="flex justify-between">
                     <span className="text-gray-600">Scholarships Awarded:</span>
                     <span className="font-semibold text-gray-900">
-                      15 students
+                      2 students
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Events Organized:</span>
-                    <span className="font-semibold text-gray-900">24 events</span>
+                    <span className="font-semibold text-gray-900">12 events</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Families Supported:</span>
-                    <span className="font-semibold text-gray-900">45 families</span>
+                    <span className="font-semibold text-gray-900">145 families</span>
                   </div>
                   <div className="flex justify-between border-t pt-3">
                     <span className="text-gray-600 font-semibold">
                       Total Funds Raised:
                     </span>
-                    <span className="font-bold text-[#007A33]">$75,000</span>
+                    <span className="font-bold text-[#007A33]">$15,000</span>
                   </div>
                 </div>
               </div>
