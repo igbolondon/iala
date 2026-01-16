@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
         title="Contact Us"
         subtitle="Get in Touch"
         description="Reach out to us for membership inquiries, event information, or any questions about our community"
-        image="src/assets/Ken-26.jpeg"
+        image="/Ken-26.jpeg"
         height="md"
       />
 

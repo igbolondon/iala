@@ -62,7 +62,7 @@ const Donate: React.FC = () => {
         title="Support Our Community"
         subtitle="Make a Difference Today"
         description="Your generous donations help us preserve culture, support education, and strengthen our community bonds"
-        image="src/assets/Ken-18.jpeg"
+        image="/Ken-18.jpeg"
         height="md"
       />
 

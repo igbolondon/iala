@@ -72,7 +72,7 @@ const Gallery: React.FC = () => {
         title="Community Gallery"
         subtitle="Moments That Define Us"
         description="Explore photos and videos capturing the spirit of our community events and cultural celebrations"
-        image="src/assets/3W8A0695.JPG"
+        image="/3W8A0695.JPG"
         height="md"
       />
 

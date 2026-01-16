@@ -8,7 +8,15 @@ interface EventCardProps {
   onRSVP?: (eventId: string) => void;
 }
 
-const EventCard: React.FC<EventCardProps> = ({ event, onRSVP }) => {
+// const EventCard: React.FC<EventCardProps> = ({ event, onRSVP }) => {
+//   const categoryColors = {
+//     cultural: "bg-purple-100 text-purple-800",
+//     social: "bg-blue-100 text-blue-800",
+//     educational: "bg-orange-100 text-orange-800",
+//     fundraising: "bg-red-100 text-red-800",
+//   };
+
+const EventCard: React.FC<EventCardProps> = ({ event }) => {
   const categoryColors = {
     cultural: "bg-purple-100 text-purple-800",
     social: "bg-blue-100 text-blue-800",

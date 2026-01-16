@@ -5,7 +5,7 @@ const DonateSoon: React.FC = () => {
     <div>
       <Hero
         title="COMING SOON"
-        image="src/assets/Ken-18.jpeg"
+        image="/Ken-18.jpeg"
         height="xl"
       />
     </div>
