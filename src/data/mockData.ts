@@ -171,7 +171,7 @@ export const mockGallery: GalleryItem[] = [
     title: "Community Elders Gathering",
     type: "image",
     videoUrl: "",
-    url: "/Elders-picnic.jpg",
+    url: "/Elders-picnic.JPG",
     date: new Date("2026-01-16"),
     event: "Annual Community Picnic Meeting",
   },
